@@ -1,0 +1,15 @@
+{
+	"name": "xzserv",
+	"version": "1.0.0",
+	"description": "",
+	"author": "",
+	"dependencies": {
+		"async": "*",
+		"log4js": "*",
+		"mysql": "*",
+		"buffer-crc32": "*",
+		"underscore": "*",
+		"zstd-napi": "*",
+		"msgpack": "*"
+	}
+}

@@ -1,0 +1,13 @@
+[Service]
+ExecStart=/usr/bin/nodejs /var/www/xzserv/server.js
+WorkingDirectory=/var/www/xzserv
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=xzserv
+User=www-data
+Group=www-data
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
