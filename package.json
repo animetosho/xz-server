@@ -10,6 +10,6 @@
 		"buffer-crc32": "*",
 		"underscore": "*",
 		"zstd-napi": "*",
-		"msgpack": "*"
+		"msgpack": "https://github.com/js-seth-h/msgpack-node.git"
 	}
 }
