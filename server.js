@@ -31,7 +31,7 @@ var db;
 var dbConnect = function() {
 	db = require('mysql').createPool({
 		socketPath: '/var/run/mysqld/mysqld.sock',
-		user: 'toto_web',
+		user: 'xzserv',
 		password: 'xxxx',
 		database: 'storage',
 		connectionLimit: 1,
