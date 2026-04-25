@@ -54,7 +54,7 @@ const zstd = require('zstd-napi');
 const decomp = new zstd.Decompressor();
 decomp.loadDictionary(require('fs').readFileSync('attach.dict'));
 const ZSTD_MAGIC = Buffer.from([0x28, 0xb5, 0x2f, 0xfd]);
-const msgpack = require('msgpack');
+const msgpack = require('@msgpack/msgpack');
 
 var deferExit = function(code) {
 	setTimeout(function() {
@@ -147,7 +147,7 @@ var sendAttachpack = function(m, req, resp) {
 				e.attachments = e.attachments.slice(1);
 			else
 				e.attachments = decomp.decompress(Buffer.concat([ZSTD_MAGIC, e.attachments]));
-			e.attachments = msgpack.unpack(e.attachments);
+			e.attachments = msgpack.decode(e.attachments);
 			
 			
 			[0,1].forEach(type => {
