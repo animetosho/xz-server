@@ -15,8 +15,12 @@ When a user requests an attachment package for download, the server:
 
 As 7z also supports LZMA2 compression, this allows packaging to occur without any recompression, thus uses minimal CPU resources.
 
-A downside to this approach is that there’s no solid compression applied. This has the greatest effect when a single attachment appears as multiple files in the package, as it must also be duplicated in the 7z data (in other words, if a font needs to be present twice in the package, there will be two *full* copies in the 7z file).
+## Limitations
+
+A downside to this implementation is that there’s no solid compression applied. This has the greatest effect when a single file appears as multiple files in the package, as it must also be duplicated in the 7z data (in other words, if a font needs to be present twice in the package, there will be two *full* copies in the 7z file).
 There may be a way to solve this by marking a partially solid archive and using some LZ trick to deduplicate identical files in the 7z package, but I never investigated this.
+
+Also this application only supports XZ files created using LZMA2 compression with CRC32 check (noting that the latter may not be the default).
 
 ## Configuration
 
