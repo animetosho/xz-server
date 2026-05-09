@@ -45,3 +45,7 @@ Values are hard coded in *server.js*, search for the following to change:
 5. Modify *server.js* to set configuration (above)
 6. Set up the server as a service, where *server.js* is the executed script. A sample systemd service definition is supplied in *xzserv.service*
 7. Configure a web server to proxy to this server via the Unix socket (unless you’ve changed the code to listen on a port instead)
+
+# License
+
+This code is Public Domain or [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode) (or equivalent) if PD isn’t recognised.
